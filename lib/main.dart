@@ -31,6 +31,8 @@ class _PhotoGalleryState extends State<PhotoGallery> {
         "/Fantasy": (BuildContext context) => DetailsScreen(),
         "/Cinematography": (BuildContext context) => DetailsScreen(),
         "/Deep_Sea": (BuildContext context) => DetailsScreen(),
+        "/Deep_Space": (BuildContext context) => DetailsScreen(),
+        "/Gaming": (BuildContext context) => DetailsScreen(),
       },
     );
   }

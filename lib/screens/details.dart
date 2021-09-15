@@ -25,6 +25,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
               Container(
                 height: size.height / 3,
                 decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: <Color>[
+                      Color(0xff000000),
+                      Color(0xffeeee00)
+                    ], // red to yellow
+                    tileMode: TileMode
+                        .repeated, // repeats the gradient over the canvas
+                  ),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20),
@@ -35,23 +45,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
               ),
-              Container(
-                alignment: Alignment.topCenter,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: <Color>[Colors.red, Colors.black],
-                  ),
-                ),
-              ),
-              //second child
+              //2
               Align(
                 alignment: Alignment.topLeft,
                 child: Material(
                   borderRadius: BorderRadius.circular(100),
-                  color: Colors.black54,
+                  color: Colors.transparent,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(100),
                     onTap: () {
@@ -67,7 +66,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
               ),
-              //3rd child
+              //3
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
@@ -82,7 +81,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 alignment: Alignment.topRight,
                 child: Material(
                   borderRadius: BorderRadius.circular(100),
-                  color: Colors.black54,
+                  color: Colors.transparent,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(100),
                     onTap: () {
