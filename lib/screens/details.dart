@@ -23,7 +23,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           Stack(
             children: [
               Container(
-                height: size.height / 3,
+                height: size.height / 2.5,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
