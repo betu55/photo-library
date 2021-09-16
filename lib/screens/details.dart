@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:photo_gallery/screens/categories.dart';
 
 Color liked = Colors.grey.shade600;
 IconData thumbsUp = Icons.thumb_up_alt_outlined;

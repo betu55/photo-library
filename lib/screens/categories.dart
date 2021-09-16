@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/model/categoryCard.dart';
 import 'package:photo_gallery/data/imagesList.dart';
+import 'package:photo_gallery/screens/components/sidebar.dart';
+
+List iconsData = [
+  [Icons.home, "Home"],
+  [Icons.safety_divider, "Safety"],
+  [Icons.ac_unit, "AC"],
+  [Icons.archive, "Archived"],
+  [Icons.access_alarm, "Alarm"],
+  [Icons.favorite, "Favorites"],
+  [Icons.settings, "Settings"],
+];
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -13,6 +24,7 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SideBar(),
       backgroundColor: Colors.grey.shade400,
       // appBar: AppBar(
       //   iconTheme: IconThemeData(color: Colors.grey.shade400),
@@ -45,7 +57,7 @@ class _CategoriesState extends State<Categories> {
                             padding: EdgeInsets.all(14),
                             child: Icon(
                               Icons.menu,
-                              color: Colors.grey,
+                              color: Colors.grey.shade700,
                             ),
                           ),
                         ),
@@ -65,14 +77,38 @@ class _CategoriesState extends State<Categories> {
                       ),
                       width: double.maxFinite,
                       child: ListView.builder(
-                        itemCount: 14,
+                        itemCount: iconsData.length,
                         scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
                         itemBuilder: (context, i) {
-                          return Container(
-                            color: Colors.blueAccent,
-                            margin: EdgeInsets.all(8),
-                            height: 60,
-                            width: 60,
+                          return Material(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(10),
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(10),
+                              onTap: () {
+                                print(iconsData[i][1]);
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10),
+                                  ),
+                                ),
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 5, horizontal: 16),
+                                height: 50,
+                                width: 60,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(iconsData[i][0]),
+                                    Text(iconsData[i][1]),
+                                  ],
+                                ),
+                              ),
+                            ),
                           );
                         },
                       ),
