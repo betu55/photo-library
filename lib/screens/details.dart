@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:photo_gallery/screens/categories.dart';
+import 'package:photo_gallery/screens/components/favIcon.dart';
 
 Color liked = Colors.grey.shade600;
 IconData thumbsUp = Icons.thumb_up_alt_outlined;
@@ -83,19 +83,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 child: Material(
                   borderRadius: BorderRadius.circular(100),
                   color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(100),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(18),
-                      child: Icon(
-                        Icons.favorite_outline,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
+                  child: FavIcon(),
                 ),
               ),
             ],

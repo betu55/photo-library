@@ -5,25 +5,28 @@ import 'package:photo_gallery/screens/components/sidebar.dart';
 
 List iconsData = [
   [Icons.home, "Home"],
-  [Icons.safety_divider, "Safety"],
-  [Icons.ac_unit, "AC"],
+  [Icons.share, "Share"],
+  [Icons.upload, "Upload"],
   [Icons.archive, "Archived"],
-  [Icons.access_alarm, "Alarm"],
   [Icons.favorite, "Favorites"],
   [Icons.settings, "Settings"],
 ];
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
+  static const String routName = "/Home";
 
   @override
   _CategoriesState createState() => _CategoriesState();
 }
 
 class _CategoriesState extends State<Categories> {
+  final _myKey = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _myKey,
       drawer: SideBar(),
       backgroundColor: Colors.grey.shade400,
       // appBar: AppBar(
@@ -52,7 +55,10 @@ class _CategoriesState extends State<Categories> {
                         color: Colors.transparent,
                         child: InkWell(
                           borderRadius: BorderRadius.circular(100),
-                          onTap: () {},
+                          onTap: () {
+                            // Scaffold.of(context).openDrawer();
+                            _myKey.currentState!.openDrawer();
+                          },
                           child: Container(
                             padding: EdgeInsets.all(14),
                             child: Icon(
@@ -79,6 +85,7 @@ class _CategoriesState extends State<Categories> {
                       child: ListView.builder(
                         itemCount: iconsData.length,
                         scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
                         physics: BouncingScrollPhysics(),
                         itemBuilder: (context, i) {
                           return Material(
@@ -87,7 +94,10 @@ class _CategoriesState extends State<Categories> {
                             child: InkWell(
                               borderRadius: BorderRadius.circular(10),
                               onTap: () {
-                                print(iconsData[i][1]);
+                                Navigator.pushNamed(
+                                  context,
+                                  "/${iconsData[i][1]}",
+                                );
                               },
                               child: Container(
                                 decoration: BoxDecoration(
@@ -120,18 +130,19 @@ class _CategoriesState extends State<Categories> {
             Expanded(
               flex: 8,
               child: GridView.builder(
-                  itemCount: coverImages.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  ),
-                  itemBuilder: (BuildContext context, index) {
-                    return CategoryCard(
-                      col: coverImages[index].textColor,
-                      category: coverImages[index].imgCategory,
-                      url: coverImages[index].imgUrl,
-                      imgList: coverImages[index].imgList,
-                    );
-                  }),
+                itemCount: coverImages.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemBuilder: (BuildContext context, index) {
+                  return CategoryCard(
+                    col: coverImages[index].textColor,
+                    category: coverImages[index].imgCategory,
+                    url: coverImages[index].imgUrl,
+                    imgList: coverImages[index].imgList,
+                  );
+                },
+              ),
             ),
           ],
         ),

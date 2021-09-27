@@ -25,6 +25,7 @@ class _ImgCardState extends State<CategoryCard> {
       child: Material(
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
+          borderRadius: BorderRadius.circular(10),
           splashColor: widget.col,
           splashFactory: InkSplash.splashFactory,
           onTap: () {

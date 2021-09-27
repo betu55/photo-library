@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/screens/categories.dart';
 import 'package:photo_gallery/screens/details.dart';
+import 'package:photo_gallery/screens/settings.dart';
+import 'package:photo_gallery/screens/upload.dart';
 
 void main() {
   runApp(PhotoGallery());
@@ -18,9 +20,11 @@ class _PhotoGalleryState extends State<PhotoGallery> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
+      initialRoute: Categories.routName,
       routes: {
-        "/": (BuildContext context) => Categories(),
+        Categories.routName: (BuildContext context) => Categories(),
+        Settings.routName: (BuildContext context) => Settings(),
+        Upload.routName: (BuildContext context) => Upload(),
         "/Vehicles": (BuildContext context) => DetailsScreen(),
         "/Sports": (BuildContext context) => DetailsScreen(),
         "/Simple": (BuildContext context) => DetailsScreen(),
