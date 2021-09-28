@@ -7,7 +7,6 @@ List iconsData = [
   [Icons.home, "Home"],
   [Icons.share, "Share"],
   [Icons.upload, "Upload"],
-  [Icons.archive, "Archived"],
   [Icons.favorite, "Favorites"],
   [Icons.settings, "Settings"],
 ];

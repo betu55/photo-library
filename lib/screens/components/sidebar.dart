@@ -42,7 +42,7 @@ class SideBar extends StatelessWidget {
                     onTap: () {},
                     child: Container(
                       height: size.height / 8,
-                      width: size.width / 1.1,
+                      width: size.width / 1.2,
                       margin: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -137,7 +137,7 @@ class SideBar extends StatelessWidget {
                     onTap: () {},
                     child: Container(
                       height: size.height / 14,
-                      width: size.width / 1.4,
+                      width: size.width / 1.7,
                       margin: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -166,7 +166,7 @@ class SideBar extends StatelessWidget {
                     onTap: () {},
                     child: Container(
                       height: size.height / 16,
-                      width: size.width / 2,
+                      width: size.width / 1.7,
                       margin: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(

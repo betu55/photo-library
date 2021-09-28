@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/screens/categories.dart';
+import 'package:photo_gallery/screens/components/dropdown.dart';
+import 'package:photo_gallery/screens/components/field.dart';
 
 class Upload extends StatelessWidget {
   const Upload({Key? key}) : super(key: key);
@@ -32,8 +34,33 @@ class Upload extends StatelessWidget {
         body: Container(
           alignment: Alignment.center,
           child: Expanded(
-            child: Row(
-              children: [Text("UPLOAD"), Icon(Icons.upload)],
+            child: Container(
+              width: MediaQuery.of(context).size.width / 1.2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    child:
+                        InputField("example: root/sdcars/pictures/stork.jpg"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 16),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blueAccent,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                      ),
+                      onPressed: () {},
+                      child: Text("Upload"),
+                    ),
+                  ),
+                  Container(
+                    child: Dropdown(),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
