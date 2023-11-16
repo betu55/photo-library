@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/screens/categories.dart';
 import 'package:photo_gallery/screens/details.dart';
+import 'package:photo_gallery/screens/favorites.dart';
 import 'package:photo_gallery/screens/settings.dart';
 import 'package:photo_gallery/screens/share.dart';
 import 'package:photo_gallery/screens/upload.dart';
@@ -27,6 +28,7 @@ class _PhotoGalleryState extends State<PhotoGallery> {
         Settings.routName: (BuildContext context) => Settings(),
         Upload.routName: (BuildContext context) => Upload(),
         Share.routName: (BuildContext context) => Share(),
+        Favorites.routName: (BuildContext context) => Favorites(),
         "/Vehicles": (BuildContext context) => DetailsScreen(),
         "/Sports": (BuildContext context) => DetailsScreen(),
         "/Simple": (BuildContext context) => DetailsScreen(),
